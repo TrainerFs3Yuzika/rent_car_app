@@ -10,6 +10,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
                         <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
                         <li class="breadcrumb-item text-white active" aria-current="page">Testimonial</li>
                     </ol>
                 </nav>
@@ -34,3 +35,7 @@
     </div>
 </div>
 @endforeach
+</div>
+    </div>
+</div>
+@endsection

@@ -227,7 +227,7 @@
                             data-bs-target="#staticBackdrop" @guest disabled @endguest @if ($kendaraan -> stock == 0)
                             disabled
                             @endif>
-                            Lanjut Pemesanan <i class="fas fa-credit-card"></i>
+                            Lanjut Penyewaan <i class="fas fa-credit-card"></i>
                         </button>
                     </div>
                     @if ($kendaraan -> stock == 0)
@@ -248,7 +248,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Form Pemesanan <img src="/img/form.png" alt=""
+                <h5 class="modal-title" id="staticBackdropLabel">Form Penyewaan <img src="/img/form.png" alt=""
                         height="50px"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -269,7 +269,7 @@
                     </div>
                     @if ($kendaraan -> category -> nama == 'Mobil')
                     <div class="mb-3">
-                        <label for="sopir" class="form-label">Opsi Pemesanan <img src="/img/steer.png" alt=""
+                        <label for="sopir" class="form-label">Opsi Penyewaan <img src="/img/steer.png" alt=""
                                 width="20px"></label>
                         <select class="form-select" id="sopir" name="opsi" required>
                             <option value="1">Tanpa Sopir</option>

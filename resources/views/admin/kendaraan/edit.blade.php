@@ -41,7 +41,7 @@
               </div>
               <div class="mb-3">
                   <label for="jumlah_penumpang" class="form-label">Jumlah Penumpang</label>
-                  <input type="text" class="form-control form-control-lg @error('jumlah_penumpang') is-invalid @enderror" placeholder="Masukkan Jumlah Penumpang" id="jumlah_penumpang" name="jumlah_penumpang" required value="{{ old('jumlah_penumpang') }}">
+                  <input type="text" class="form-control form-control-lg @error('jumlah_penumpang') is-invalid @enderror" placeholder="Masukkan Jumlah Penumpang" id="jumlah_penumpang" name="jumlah_penumpang" required value="{{ old('jumlah_penumpang', $kendaraan->jumlah_penumpang) }}">
                   @error('jumlah_penumpang')
                       <div class="invalid-feedback">
                           {{ $message }}

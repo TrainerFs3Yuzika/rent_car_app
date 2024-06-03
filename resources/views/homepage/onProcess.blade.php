@@ -45,7 +45,7 @@
                         <table class="table text-center">
                             <thead class="justify-center">
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">No.</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Kendaraan</th>
                                     <th scope="col">Status</th>

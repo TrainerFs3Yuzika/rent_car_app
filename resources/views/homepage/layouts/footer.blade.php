@@ -14,13 +14,13 @@
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 ps-lg-5">
                 <h5 class="text-white mb-4">Pergi ke</h5>
                 <a class="btn btn-link" href="/about">About Us</a>
                 <a class="btn btn-link" href="/contact">Contact Us</a>
                 <a class="btn btn-link" href="/service">Service</a>
                 <a class="btn btn-link" href="/project">Kendaraan</a>
-                <a class="btn btn-link" href="/chart">Chart</a>
+                <a class="btn btn-link" href="/cart">Cart</a>
             </div>
             <div class="col-md-6 col-lg-3">
             <h5 class="text-white mb-4">Pembayaran</h5>
@@ -28,7 +28,7 @@
                 <a class="btn btn-link" href="/contact">BNI</a>
                 <a class="btn btn-link" href="/service">MANDIRI</a>
                 <a class="btn btn-link" href="/project">BCA</a>
-                <a class="btn btn-link" href="/chart">E-WALLET</a>
+                <a class="btn btn-link" href="/cart">E-WALLET</a>
             </div>
             <div class="col-md-6 col-lg-3">
                 <h5 class="text-white mb-4 fst-italic" text="align-justify">Rent Car and Motor Surabaya</h5>
