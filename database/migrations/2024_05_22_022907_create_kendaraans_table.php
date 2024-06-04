@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->integer('stock')->default(1);
             $table->string('plat_nomor')->nullable();
-            $table->integer('jumlah_penumpang');
+            $table->integer('jumlah_penumpang')->nullable();
             $table->timestamps();
         });
     }
