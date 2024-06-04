@@ -112,7 +112,7 @@
                     </div>
                     <input type="hidden" name="stock" value="0">
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-primary w-100">Selesaikan Pembayaran</button>
+                        <button type="submit" class="btn btn-primary w-100">Selesaikan pesanan</button>
                     </div>
                 </div>
             </div>

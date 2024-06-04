@@ -2,7 +2,6 @@
 @section('content')
 <div class="content-body">
     <div class="container">
-
         <div class="row page-titles">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Table</a></li>
@@ -23,7 +22,7 @@
                                     <h1 class="d-inline">Detail Denda</h1>
                                 </div>
                                 <div>
-                                    <a href="/export/{{ $denda -> id }}" class=" btn btn-primary center"> Cetak PDF</a>
+                                 <!-- <a href="/export/{{ $denda->id }}" class="btn btn-primary center"> Cetak PDF</a> -->
                                 </div>
                             </div>
                             <hr>
@@ -36,7 +35,7 @@
                                             </th>
                                             <th>:</th>
                                             <td>
-                                                <h4>{{ $denda -> user -> name }}</h4>
+                                                <h4>{{ $denda->user->name ?? 'Nama tidak ditemukan' }}</h4>
                                             </td>
                                         </tr>
                                         <tr>
@@ -45,7 +44,7 @@
                                             </th>
                                             <th>:</th>
                                             <td>
-                                                <img src="{{ asset('img/payments/'.$denda -> bank -> name.'.png') }}"
+                                                <img src="{{ asset('img/payments/' . ($denda->bank->name ?? 'default') . '.png') }}"
                                                     alt="" width="350px">
                                             </td>
                                         </tr>
@@ -55,7 +54,7 @@
                                             </th>
                                             <th>:</th>
                                             <td>
-                                                <h4>{{ $denda -> orderDetail -> tanggal_sewa }}</h4>
+                                                <h4>{{ $denda->orderDetail->tanggal_sewa ?? 'Tanggal sewa tidak ditemukan' }}</h4>
                                             </td>
                                         </tr>
                                         <tr>
@@ -64,9 +63,7 @@
                                             </th>
                                             <th>:</th>
                                             <td>
-                                                <h4>
-                                                    {{ $tenggang }}
-                                                </h4>
+                                                <h4>{{ $tenggang ?? 'Jatuh tempo tidak ditemukan' }}</h4>
                                             </td>
                                         </tr>
                                         <tr>
@@ -75,7 +72,7 @@
                                             </th>
                                             <th>:</th>
                                             <td>
-                                                <h4>{{ $denda -> pengembalianDetail -> tanggal_kembali }}</h4>
+                                                <h4>{{ $denda->pengembalianDetail->tanggal_kembali ?? 'Tanggal kembali tidak ditemukan' }}</h4>
                                             </td>
                                         </tr>
                                         <tr>
@@ -86,7 +83,6 @@
                                             <td>
                                                 <h4>
                                                     @if($selisih)
-
                                                     <span class="badge bg-danger">{{ $selisih }} Hari</span>
                                                     @else
                                                     -
@@ -100,16 +96,18 @@
                                             </th>
                                             <th>:</th>
                                             <td>
-                                                <h4>Rp.{{ number_format($denda -> total) }}</h4>
+                                                <h4>Rp.{{ number_format($denda->total ?? 0) }}</h4>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="col-6">
-                                {{-- <img src="{{ asset('img/kendaraan/'.$orderDetail -> kendaraan -> slug.'.png') }}"
-                                alt=""
-                                height="250px"> --}}
+                                @if($denda->orderDetail && $denda->orderDetail->kendaraan)
+                                    <img src="{{ asset('img/kendaraan/' . $denda->orderDetail->kendaraan->slug . '.png') }}" alt="" height="250px">
+                                @else
+                                    <p>Gambar kendaraan tidak ditemukan</p>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -119,5 +117,4 @@
     </div>
 </div>
 @include('sweetalert::alert')
-
 @endsection

@@ -153,7 +153,12 @@
     <header class="clearfix">
         <div id="logo">
         </div>
-        <h1 style="margin-top:2em ;">Pesanan ke-{{ $orderDetails -> order_id }}</h1>
+        @if ($orderDetails)
+            <h1 style="margin-top:2em;">Pesanan ke-{{ $orderDetails->order_id }}</h1>
+        @else
+            <h1 style="margin-top:2em;">Pesanan tidak ditemukan</h1>
+        @endif
+
         <div id="company" class="clearfix">
             <div>Rent Car and Motor Surabaya</div>
             <div>Jl.Jl. Jendral Sudirman No. 12,<br /> Surabaya, Indonesia</div>

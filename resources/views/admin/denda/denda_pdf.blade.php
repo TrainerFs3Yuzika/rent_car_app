@@ -181,7 +181,7 @@
                     <td class="service">{{ $denda->orderDetail->lama_sewa }} Hari</td>
                     <td class="service">{{ $denda->pengembalianDetail->tanggal_kembali }}</td>
                     <td class="service">{{ $denda->bank->name }}</td>
-                    <td class="service">{{ $denda->total }}</td>
+                    <td class="service">Rp. {{ number_format($denda->total, 0, ',', '.') }}</td>
                 </tr>
                 @endforeach
 

@@ -14,7 +14,7 @@
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 ps-lg-5">
+            <div class="col-md-6 col-lg-3">
                 <h5 class="text-white mb-4">Pergi ke</h5>
                 <a class="btn btn-link" href="/about">About Us</a>
                 <a class="btn btn-link" href="/contact">Contact Us</a>

@@ -51,18 +51,31 @@ class DashboardDendaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Denda $denda)
-    {
-        $durasi = $denda->orderDetail->lama_sewa * 24;
-        $jangka = date('Y-m-d', strtotime($denda->orderDetail->tanggal_sewa . '+' . $durasi . 'hours'));
-        $tgl_kembali = Carbon::parse($denda->pengembalianDetail->tanggal_kembali);
-        $selisih = $tgl_kembali->diffInDays($jangka);
-        return view('admin.denda.show', [
-            'denda' => $denda,
-            'selisih' => $selisih,
-            'tenggang' => $jangka,
-            'title' => 'Detail Denda',
-        ]);
+{
+    // Periksa apakah orderDetail ada
+    if (!$denda->orderDetail) {
+        return redirect('/dashboard/denda')->withErrors('Order Detail tidak ditemukan');
     }
+
+    // Periksa apakah pengembalianDetail ada
+    if (!$denda->pengembalianDetail) {
+        return redirect('/dashboard/denda')->withErrors('Pengembalian Detail tidak ditemukan');
+    }
+
+    $durasi = $denda->orderDetail->lama_sewa * 24;
+    $jangka = date('Y-m-d', strtotime($denda->orderDetail->tanggal_sewa . '+' . $durasi . 'hours'));
+    $tgl_kembali = Carbon::parse($denda->pengembalianDetail->tanggal_kembali);
+    $selisih = $tgl_kembali->diffInDays($jangka);
+
+    // Kirim data ke view
+    return view('admin.denda.show', [
+        'denda' => $denda,
+        'selisih' => $selisih,
+        'tenggang' => $jangka,
+        'title' => 'Detail Denda',
+    ]);
+}
+
 
     /**
      * Show the form for editing the specified resource.
