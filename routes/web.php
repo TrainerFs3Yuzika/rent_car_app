@@ -84,8 +84,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/return/pdf', [PengembalianController::class, 'cetak_pdf']);
     Route::get('/cetak/denda', [DashboardDendaController::class, 'cetak_pdf']);
 
-    Route::post('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-    Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-    Route::post('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-    Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+    // Route::post('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    // Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+    // Route::post('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+    // Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
