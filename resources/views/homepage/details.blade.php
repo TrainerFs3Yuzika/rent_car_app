@@ -194,6 +194,7 @@
                                         <h6>Rp. {{ number_format($kendaraan -> harga) }}</h6>
                                     </li>
                                 </ul>
+                                @if ($kendaraan->category->nama !== 'Motor')
                                 <h5>Dengan Sopir</h5>
                                 <ul>
                                     <li>
@@ -206,6 +207,7 @@
                                         <h6>Rp. {{ number_format($sopir_bbm) }}</h6>
                                     </li>
                                 </ul>
+                                @endif
 
                             </div>
                         </div>

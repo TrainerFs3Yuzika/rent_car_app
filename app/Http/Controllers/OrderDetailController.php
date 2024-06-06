@@ -50,11 +50,16 @@ class OrderDetailController extends Controller
         $orderUserStatus = Order::where('user_id', $request->user_id)->where('status', 0)->first();
         $detailOrderId = OrderDetail::where('order_id', $orderUserStatus->id)->where('kendaraan_id', $kendaraan)->first();
         $addOrder = [];
+        if ($request->opsi) {
+            $harga = opsiHarga($request->opsi, $kendaraan->harga);
+        } else {
+            $harga = $kendaraan->harga;
+        }
         if (empty($detailOrderId)) {
             $addOrder = [
                 'order_id' => $orderUserStatus->id,
                 'kendaraan_id' => $kendaraan->id,
-                'total_bayar' => $kendaraan->harga * $request->lama_sewa,
+                'total_bayar' => $harga * $request->lama_sewa,
                 'tanggal_sewa' => $request->tanggal_sewa,
                 'opsi' => $request->opsi,
                 'catatan' => $request->catatan,
@@ -66,7 +71,7 @@ class OrderDetailController extends Controller
             }
             OrderDetail::insert($addOrder);
         } else {
-            $detailOrderId->harga_sewa += $kendaraan->harga * $request->lama_sewa;
+            $detailOrderId->harga_sewa += $harga * $request->lama_sewa;
             if ($request->lama_sewa != 0) {
                 $detailOrderId->lama_sewa = $request->lama_sewa;
             } else {

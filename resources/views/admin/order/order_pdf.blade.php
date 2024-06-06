@@ -119,7 +119,7 @@
         table td.service,
         table td.desc {
             vertical-align: top;
-            
+
         }
 
         table td.unit,
@@ -187,7 +187,7 @@
                     <td class="service">{{ $order->kendaraan->nama ?? 'N/A' }}</td>
                     <td class="service">{{ $order->tanggal_sewa }}</td>
                     <td class="service">{{ $order->lama_sewa }} Hari</td>
-                    <td class="service">{{ $order->order->bank->name }}</td>
+                    <td class="service">{{ $order->order->bank->name ?? 'Belum Membayar'}}</td>
                     <td class="service">Rp. {{ number_format($order->total_bayar) ?? 'N/A' }}</td>
                 </tr>
                 @endforeach
