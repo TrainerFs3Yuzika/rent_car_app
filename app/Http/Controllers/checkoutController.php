@@ -46,8 +46,8 @@ class checkoutController extends Controller
             $validatedData['bukti_pembayaran'] = $request->file('bukti_pembayaran')->store('bukti_pembayaran', 'public');
         }
 
-        $ubahStock = 0;
-        Kendaraan::where('id', $kendaraan->id)->update(['stock' => $ubahStock]);
+        // $ubahStock = 0;
+        // Kendaraan::where('id', $kendaraan->id)->update(['stock' => $ubahStock]);
 
         OrderDetail::where('order_id', $order->id)->update($validatedData);
         $orderr['status'] = $order->status = 1;

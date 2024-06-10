@@ -141,17 +141,17 @@ $cekStock = $kendaraan -> stock;
                 </div>
                 <a href="/checkout" class="btn btn-primary w-100 @if (empty($order))
                     disabled
-                @endif @if (!empty($order))
+                {{-- @endif @if (!empty($order))
                     @if ($cekStock == 0)
                     disabled
-                @endif
+                @endif --}}
                 @endif">Checkout</a>
-                @if (!empty($order))
+                {{-- @if (!empty($order))
                 @if ($cekStock == 0)
                 <span class="text-danger text-start"><strong class="fst-italic">*Maaf kendaraan yang anda pilih
                         tidak tersedia</strong></span>
                 @endif
-                @endif
+                @endif --}}
             </div>
         </div>
     </div>

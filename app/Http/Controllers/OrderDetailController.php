@@ -50,6 +50,9 @@ class OrderDetailController extends Controller
         $orderUserStatus = Order::where('user_id', $request->user_id)->where('status', 0)->first();
         $detailOrderId = OrderDetail::where('order_id', $orderUserStatus->id)->where('kendaraan_id', $kendaraan)->first();
         $addOrder = [];
+        if ($kendaraan->stock == 0) {
+            return redirect('/detail/' . $kendaraan->slug)->with('error', 'Kendaraan tidak tersedia');
+        };
         if ($request->opsi) {
             $harga = opsiHarga($request->opsi, $kendaraan->harga);
         } else {
@@ -78,6 +81,8 @@ class OrderDetailController extends Controller
                 return redirect('/detail/' . $kendaraan->slug)->with('error', 'Lama Sewa tidak boleh 0');
             }
         }
+        $ubahStock = 0;
+        Kendaraan::where('id', $kendaraan->id)->update(['stock' => $ubahStock]);
         return redirect('/detail/' . $kendaraan->slug)->with('success', 'Berhasil menambahkan pesanan');
 
         // $validateData = $request->validate([
@@ -164,10 +169,12 @@ class OrderDetailController extends Controller
         $orderId = Order::where('id', $orderDetailId->order_id)->first();
         // $orderId->total -= $orderDetailId->harga_sewa;
         // $orderId->update();
-        $orderDelete = Order::where('status', 0)->first();
+        // $orderDelete = Order::where('status', 0)->first();
 
         $orderDetailId->delete();
-        $orderDelete->delete();
+        $orderId->delete();
+        $ubahStock = 1;
+        Kendaraan::where('id', $orderDetail->kendaraan_id)->update(['stock' => $ubahStock]);
         return redirect('/cart')->with('success', 'Berhasil menghapus pesanan');
     }
 }
