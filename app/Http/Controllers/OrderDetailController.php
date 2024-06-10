@@ -54,8 +54,10 @@ class OrderDetailController extends Controller
             return redirect('/detail/' . $kendaraan->slug)->with('error', 'Kendaraan tidak tersedia');
         };
         if ($request->opsi) {
-            $harga = opsiHarga($request->opsi, $kendaraan->harga);
+            $opsi = $request->opsi;
+            $harga = opsiHarga($opsi, $kendaraan->harga);
         } else {
+            $opsi = null;
             $harga = $kendaraan->harga;
         }
         if (empty($detailOrderId)) {
@@ -64,7 +66,7 @@ class OrderDetailController extends Controller
                 'kendaraan_id' => $kendaraan->id,
                 'total_bayar' => $harga * $request->lama_sewa,
                 'tanggal_sewa' => $request->tanggal_sewa,
-                'opsi' => $request->opsi,
+                'opsi' => $opsi,
                 'catatan' => $request->catatan,
             ];
             if ($request->lama_sewa != 0) {

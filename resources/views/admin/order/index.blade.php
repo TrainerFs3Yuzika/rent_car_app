@@ -85,7 +85,7 @@
                                                 width="100px">
                                             @endif
                                         <td>
-                                                <a href="/dashboard/order/{{$order->id}}"
+                                                <a href="/dashboard/order/{{$order->order->id}}"
                                                     class="btn btn-info shadow  sharp me-1"><i class="fas fa-eye "
                                                         style="font-size: 1.5em"></i>
                                                 </a>

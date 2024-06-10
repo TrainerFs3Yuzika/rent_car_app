@@ -161,6 +161,8 @@
                                         Dengan Sopir
                                         @elseif ($orderDetails -> opsi == 3)
                                         Dengan Sopir + BBM
+                                        @else
+                                        Lepas Kunci
                                         @endif
                                     </h6>
                                 </td>

@@ -23,10 +23,12 @@
                                     <h1 class="d-inline">Detail Pemesanan</h1>
                                 </div>
                                 <div>
-                                    <a href="/export/{{ $order -> id }}" class=" btn btn-primary center" @if ($order ->
+                                    <a href="/export/{{ $order -> id }}" class=" btn btn-primary center"
+                                        {{-- @if ($order ->
                                         status != 2)
                                         style="pointer-events: none;"
-                                        @endif> Cetak PDF</a>
+                                        @endif --}}
+                                        > Cetak PDF</a>
                                 </div>
                             </div>
                             <hr>
@@ -157,11 +159,13 @@
                                             <th>:</th>
                                             <td>
                                                 @if ($orderDetail -> opsi == 1)
-                                                <h4>Lepas Kunci</h4>
+                                                <h4>Tanpa Sopir</h4>
                                                 @elseif ($orderDetail -> opsi == 2)
                                                 <h4>Dengan Sopir</h4>
                                                 @elseif ($orderDetail -> opsi == 3)
                                                 <h4>Dengan Sopir + BBM</h4>
+                                                @else
+                                                <h4>Lepas Kunci</h4>
                                                 @endif
                                             </td>
                                         </tr>

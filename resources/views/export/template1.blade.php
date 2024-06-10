@@ -233,21 +233,25 @@
                         Tanpa Sopir
                         @elseif($orderDetails -> opsi == 2)
                         Dengan Sopir
+                        @elseif($orderDetails -> opsi == 3)
+                        Dengan Sopir dan BBM
                         @else
-                        Dengan Supir dan BBM
+                        Lepas Kunci
                         @endif
                     </td>
                 </tr>
                 <tr>
                     <td class="service">Catatan Sewa</td>
 
-                    <td class="unit">{{ $orderDetails -> catatan }}</td>
+                    <td class="unit">{{ $orderDetails -> catatan ?? '-'}}</td>
                 </tr>
                 <tr>
                     <td class="service">Status Pesanan</td>
 
                     <td>
-                        @if ($orderDetails -> order -> status == 1)
+                        @if ($orderDetails -> order -> status == 0)
+                        Belum Bayar
+                        @elseif ($orderDetails -> order -> status == 1)
                         Dalam Peminjaman
                         @elseif ($orderDetails -> order -> status == 2)
                         Selesai
@@ -257,7 +261,7 @@
                 <tr>
                     <td class="service">Pembayaran</td>
 
-                    <td class="unit">{{ $orderDetails -> order -> bank -> name }}</td>
+                    <td class="unit">{{ $orderDetails -> order -> bank -> name ?? 'Belum Membayar' }}</td>
                 </tr>
             </tbody>
         </table>

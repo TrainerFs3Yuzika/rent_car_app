@@ -91,8 +91,10 @@ $cekStock = $kendaraan -> stock;
                                         {{ 'Tanpa Sopir' }}
                                         @elseif ($item -> opsi == 2)
                                         {{ 'Dengan Sopir' }}
+                                        @elseif ($item -> opsi == 3)
+                                        {{ 'Dengan Sopir + BBM' }}
                                         @else
-                                        {{ 'Dengan Supir + BBM' }}
+                                        {{ 'Lepas Kunci' }}
                                         @endif</td>
                                     <td>Rp.{{ number_format($item -> total_bayar) }}</td>
                                 </tr>

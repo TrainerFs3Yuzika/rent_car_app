@@ -188,13 +188,13 @@
                                         *Lihat persyaratan
                                     </button>
                                 </div>
-                                <h5>Lepas Kunci</h5>
+                                @if ($kendaraan->category->nama == 'Mobil')
+                                <h5>Tanpa Sopir</h5>
                                 <ul>
                                     <li>
                                         <h6>Rp. {{ number_format($kendaraan -> harga) }}</h6>
                                     </li>
                                 </ul>
-                                @if ($kendaraan->category->nama !== 'Motor')
                                 <h5>Dengan Sopir</h5>
                                 <ul>
                                     <li>
@@ -205,6 +205,13 @@
                                 <ul>
                                     <li>
                                         <h6>Rp. {{ number_format($sopir_bbm) }}</h6>
+                                    </li>
+                                </ul>
+                                @else
+                                <h5>Lepas Kunci</h5>
+                                <ul>
+                                    <li>
+                                        <h6>Rp. {{ number_format($kendaraan -> harga) }}</h6>
                                     </li>
                                 </ul>
                                 @endif
