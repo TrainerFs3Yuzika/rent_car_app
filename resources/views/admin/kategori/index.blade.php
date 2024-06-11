@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Categories</h4>
+                        <h4 class="card-title">Category</h4>
                         <div><a href="/dashboard/category/create" class="btn btn-primary">
                                 <i class="fas fa-plus"> Tambah Data</i>
                             </a></div>
@@ -31,7 +31,7 @@
                                                 <label class="form-check-label" for="checkAll"></label>
                                             </div>
                                         </th>
-                                        <th>Nama Kategori</th>
+                                        <th>Nama Category</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

@@ -6,7 +6,7 @@
         <div class="row page-titles">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Table</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Data Pengambalian</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Data Pengembalian</a></li>
             </ol>
         </div>
         <!-- row -->
@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Pengambalian</h4>
+                        <h4 class="card-title">Pengembalian</h4>
                         <div><a href="/return/pdf" class="btn btn-primary">
                                 <i class="far fa-file-pdf"> Cetak PDF</i>
                             </a></div>

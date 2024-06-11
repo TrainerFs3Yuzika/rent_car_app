@@ -12,16 +12,16 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tambah Kategori</h4>
+                            <h4 class="card-title">Tambah Category</h4>
                         </div>
                         <div class="card-body">
                             <form action="/dashboard/category" method="POST" class="mb-5" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
-                                  <label class="col-sm-2 col-form-label" for="nama">Nama Kategori</label>
+                                  <label class="col-sm-2 col-form-label" for="nama">Nama Category</label>
                                   <div class="col-sm-10">
                                     <input type="text" class="form-control @error('nama') is-invalid
-                                    @enderror" placeholder="Masukkan Kategori" id="nama" name="nama" required autofocus value="{{ old('nama') }}">
+                                    @enderror" placeholder="Masukkan Category" id="nama" name="nama" required autofocus value="{{ old('nama') }}">
                                     @error('nama')
                                       <div class="invalid-feedback">
                                         {{ $message }}
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="row justify-content-end">
                                   <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Tambah Kategori</button>
+                                    <button type="submit" class="btn btn-primary">Tambah Category</button>
                                     <a href="/dashboard/category" class="btn btn-danger">Kembali</a>
                                   </div>
                                 </div>

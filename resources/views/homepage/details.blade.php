@@ -80,8 +80,7 @@
                         </ul>
                         <div class="tab-content pt-6">
 
-                            <div class="tab-pane fade show active profile-overview" id="profile-overview"
-                                style="height: 300px">
+                            <div class="tab-pane fade show active profile-overview" id="profile-overview">
                                 <table class="table align-baseline">
                                     <tbody>
                                         <tr>

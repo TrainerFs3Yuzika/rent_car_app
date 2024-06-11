@@ -24,11 +24,11 @@
             </div>
             <div class="col-md-6 col-lg-3">
             <h5 class="text-white mb-4">Pembayaran</h5>
-                <a class="btn btn-link" href="/about">BRI</a>
-                <a class="btn btn-link" href="/contact">BNI</a>
-                <a class="btn btn-link" href="/service">MANDIRI</a>
-                <a class="btn btn-link" href="/project">BCA</a>
-                <a class="btn btn-link" href="/cart">E-WALLET</a>
+                <a class="btn btn-link" href="#">BRI</a>
+                <a class="btn btn-link" href="#">BNI</a>
+                <a class="btn btn-link" href="#">MANDIRI</a>
+                <a class="btn btn-link" href="#">BCA</a>
+                <a class="btn btn-link" href="#">E-WALLET</a>
             </div>
             <div class="col-md-6 col-lg-3">
                 <h5 class="text-white mb-4 fst-italic" text="align-justify">Rent Car and Motor Surabaya</h5>

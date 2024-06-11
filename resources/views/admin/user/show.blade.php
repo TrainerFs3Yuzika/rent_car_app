@@ -6,7 +6,7 @@
         <div class="row page-titles">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Table</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Data Pengembalian</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Data User</a></li>
             </ol>
         </div>
         <!-- row -->
@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h1 class="d-inline">Detail Pengembalian</h1>
+                                    <h1 class="d-inline">Detail User</h1>
                                 </div>
                             </div>
                             <hr>

@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h1 class="d-inline">Detail Pemesanan</h1>
+                                    <h1 class="d-inline">Detail Kendaraan</h1>
                                 </div>
                             </div>
                             <hr>
