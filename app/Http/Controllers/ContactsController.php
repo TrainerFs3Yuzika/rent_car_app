@@ -93,23 +93,29 @@ class ContactsController extends Controller
      * @param  \App\Models\Contacts  $contacts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contacts $contacts)
-    {
-        try {
-            // Menghapus kontak
-            $contacts->delete();
-            // Menampilkan pesan sukses
-            alert()->success('SuccessAlert', 'Kontak berhasil dihapus.');
-        } catch (\Exception $e) {
-            // Menangani kesalahan penghapusan
-            if ($e->getCode() == "23000") {
-                alert()->error('ErrorAlert', 'Kontak tidak bisa dihapus karena berelasi di tabel lain.');
-            } else {
-                alert()->error('ErrorAlert', 'Terjadi kesalahan saat menghapus kontak.');
-            }
+    public function destroy($id)
+{
+    \Log::info('Request to delete contact with ID: ' . $id);
+
+    try {
+        $contact = Contacts::findOrFail($id);
+        \Log::info('Found contact: ' . $contact->id);
+
+        $contact->delete();
+        \Log::info('Contact deleted successfully: ' . $contact->id);
+
+        alert()->success('SuccessAlert', 'Kontak berhasil dihapus.');
+    } catch (\Exception $e) {
+        \Log::error('Error deleting contact: ' . $e->getMessage());
+
+        if ($e->getCode() == "23000") {
+            alert()->error('ErrorAlert', 'Kontak tidak bisa dihapus karena berelasi di tabel lain.');
+        } else {
+            alert()->error('ErrorAlert', 'Terjadi kesalahan saat menghapus kontak.');
         }
-        // Mengarahkan kembali ke halaman daftar kontak
-        return redirect('/dashboard/contacts');
     }
+
+    return redirect('/dashboard/contacts');
+}
 
 }
