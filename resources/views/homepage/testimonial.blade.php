@@ -18,24 +18,30 @@
         </div>
     </div>
 </div>
-@foreach ($testimoni as $item)
-<div class="testimonial-item bg-transparent border rounded text-dark p-4">
-    <i class="fa fa-quote-left fa-2x mb-3"></i>
-    <p>{{ $item->comment }}</p>
-    <div class="d-flex align-items-center">
-        @if ($item->user->profile_photo)
-            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ $item->user->profile_photo }}" style="width: 50px; height: 50px;">
-        @else
-        <img class="img-fluid flex-shrink-0 rounded-circle" src="img/man.png" style="width: 50px; height: 50px;">
-        @endif
-        <div class="ps-3">
-            <h6 class="text-dark mb-1">{{ $item->user->name }}</h6>
-            <small>{{ $item->user->level }}</small>
+<div class="card-body px-0">
+    @foreach ($testimoni as $testimoni)
+    <div class="testimonial-item bg-transparent border rounded text-dark p-4">
+        <i class="fa fa-quote-left fa-2x mb-3"></i>
+        <p>{{ $testimoni->comment }}</p>
+        <div class="d-flex align-items-center">
+            @if ($testimoni->user->image)
+                <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('storage/'.$testimoni->user->image) }}" style="width: 50px; height: 50px;">
+            @elseif ($testimoni->user->gender == 'Perempuan')
+                <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('img/woman.png') }}" style="width: 50px; height: 50px;">
+            @elseif ($testimoni->user->gender == 'Laki-laki')
+                <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('img/man.png') }}" style="width: 50px; height: 50px;">
+            @else
+                <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('img/user.png') }}" style="width: 50px; height: 50px;">
+            @endif
+            <div class="ps-3">
+                <h6 class="text-dark mb-1">{{ $testimoni->user->name }}</h6>
+                <small>{{ $testimoni->user->level }}</small>
+            </div>
         </div>
     </div>
+    @endforeach
 </div>
-@endforeach
 </div>
-    </div>
 </div>
+
 @endsection
