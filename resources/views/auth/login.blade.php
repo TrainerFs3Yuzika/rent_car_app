@@ -68,11 +68,11 @@
                                         </div>
                                          <div class="row d-flex justify-content-between mt-4 mb-2">
                                             <div class="mb-3">
-                                                <div class="form-check custom-checkbox ms-1">
+                                                {{-- <div class="form-check custom-checkbox ms-1">
                                                     <input type="checkbox" class="form-check-input"
                                                         id="basic_checkbox_1">
                                                     <label class="form-check-label" for="basic_checkbox_1">Ingat Saya</label>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                         <div class="text-center">
