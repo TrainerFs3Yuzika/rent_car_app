@@ -24,8 +24,10 @@ class HomepageController extends Controller
     public function home()
     {
         $kendaraan = Kendaraan::where('id', '2')->orWhere('id', '19')->orWhere('id', '22')->orWhere('id', '31')->orWhere('id', '32')->orWhere('id', '41')->get();
+        $testimoni = [Testimoni::all()];
         return view('homepage.index', [
             'kendaraan' => $kendaraan,
+            'testimoni' => $testimoni,
             'title' => 'Home',
         ]);
     }

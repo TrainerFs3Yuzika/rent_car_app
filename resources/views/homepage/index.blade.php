@@ -190,53 +190,26 @@
 <div class="container-xxl bg-primary testimonial py-5 my-5 wow fadeInUp" data-wow-delay="0.1s overflow-hidden">
     <div class="container py-5 px-lg-5">
         <div class="owl-carousel testimonial-carousel">
+            @foreach ($testimoni as $testimoni)
             <div class="testimonial-item bg-transparent border rounded text-white p-4">
                 <i class="fa fa-quote-left fa-2x mb-3"></i>
-                <p>Pelayanan yang sangat ramah untuk staff nya</p>
+                <p>{{ $testimoni->comment }}</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="./img/testimonial-1.jpg"
-                        style="width: 50px; height: 50px;">
+                    @if ($testimoni->user->image)
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('storage/'.$testimoni->user->image) }}" style="width: 50px; height: 50px;">
+                    @elseif ($testimoni->user->gender == 'Perempuan')
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('img/woman.png') }}" style="width: 50px; height: 50px;">
+                    @elseif ($testimoni->user->gender == 'Laki-laki')
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('img/man.png') }}" style="width: 50px; height: 50px;">
+                    @else
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('img/user.png') }}" style="width: 50px; height: 50px;">
+                    @endif
                     <div class="ps-3">
-                        <h6 class="text-white mb-1">Sandra</h6>
-                        <small>User</small>
+                        <h6 class="text-white mb-1">{{ $testimoni->user->name }}</h6>
+                        <small>{{ $testimoni->user->level }}</small>
                     </div>
                 </div>
-            </div>
-            <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                <i class="fa fa-quote-left fa-2x mb-3"></i>
-                <p>Untuk persewaan yang sangat simple dan mudah</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="./img/testimonial-2.jpg"
-                        style="width: 50px; height: 50px;">
-                    <div class="ps-3">
-                        <h6 class="text-white mb-1">Olive</h6>
-                        <small>User</small>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                <i class="fa fa-quote-left fa-2x mb-3"></i>
-                <p>Pelayanan yang ramah</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="./img/testimonial-3.jpg"
-                        style="width: 50px; height: 50px;">
-                    <div class="ps-3">
-                        <h6 class="text-white mb-1">User</h6>
-                        <small>User</small>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                <i class="fa fa-quote-left fa-2x mb-3"></i>
-                <p>Kendaraan yang sangat terawat</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="./img/testimonial-4.jpg"
-                        style="width: 50px; height: 50px;">
-                    <div class="ps-3">
-                        <h6 class="text-white mb-1">Mail</h6>
-                        <small>User</small>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
