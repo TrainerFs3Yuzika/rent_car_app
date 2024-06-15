@@ -209,8 +209,8 @@
                         <small>{{ $testimoni->user->level }}</small>
                     </div>
                 </div>
-                @endforeach
             </div>
+            @endforeach
         </div>
     </div>
 </div>
