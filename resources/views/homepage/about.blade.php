@@ -108,7 +108,7 @@
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <img class="img-fluid rounded w-75" src="img/team-5.jpg" alt="">
+                        <img class="img-fluid rounded w-75" src="img/team-6.jpg" alt="">
                     </div>
                     <div class="px-4 py-3">
                         <h5 class="fw-bold m-0">Silvie</h5>
@@ -125,7 +125,7 @@
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <img class="img-fluid rounded w-75" src="img/team-6.jpg" alt="">
+                        <img class="img-fluid rounded w-75" src="img/team-5.jpg" alt="">
                     </div>
                     <div class="px-4 py-3">
                         <h5 class="fw-bold m-0">Iqbal</h5>
@@ -142,7 +142,7 @@
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <img class="img-fluid rounded w-75" src="img/team-6.jpg" alt="">
+                        <img class="img-fluid rounded w-75" src="img/team-5.jpg" alt="">
                     </div>
                     <div class="px-4 py-3">
                         <h5 class="fw-bold m-0">Tino</h5>
@@ -159,7 +159,7 @@
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <img class="img-fluid rounded w-75" src="img/team-6.jpg" alt="">
+                        <img class="img-fluid rounded w-75" src="img/team-5.jpg" alt="">
                     </div>
                     <div class="px-4 py-3">
                         <h5 class="fw-bold m-0">Suryo</h5>
@@ -176,7 +176,7 @@
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <img class="img-fluid rounded w-75" src="img/team-6.jpg" alt="">
+                        <img class="img-fluid rounded w-75" src="img/team-5.jpg" alt="">
                     </div>
                     <div class="px-4 py-3">
                         <h5 class="fw-bold m-0">Akbar</h5>
