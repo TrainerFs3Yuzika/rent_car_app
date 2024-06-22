@@ -99,6 +99,9 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $testimoni =Testimoni::findOrFail($id);
+        $testimoni->delete();
+
+        return redirect('/dashboard')->with('success', 'Testimoni deleted successfully');
     }
 }

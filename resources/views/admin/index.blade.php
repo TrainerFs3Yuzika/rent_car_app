@@ -58,11 +58,12 @@
 													<span class="font-w400 d-block">{{ $testimoni->comment }}</span>
 												</div>
 											</div>
-											<div class="email-check">
-												<label class="like-btn mb-0">
-													<input type="checkbox">
-													<span class="checkmark"></span>
-												</label>
+											<div class="testimoni-item" id="testimonial-{{ $testimoni->id }}">
+												<p>{{ $testimoni->content }}</p>
+												<p><strong>{{ $testimoni->author }}</strong></p>
+												<button onclick="hapus('{{ $testimoni->id }}', '{{ $testimoni->user->name }}')" class="btn btn-danger delete-button" data-id="{{ $testimoni->id }}" data-name="{{ $testimoni->user->name }}" style="background-color: red; margin-right:10px;">
+													<i class="fa fa-trash"></i>
+												</button>												
 											</div>
 										</div>
                                         @endforeach
@@ -208,6 +209,28 @@
 		</div>
 	</div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    function hapus(id, name) {
+        Swal.fire({
+            title: 'Apakah anda akan menghapus testimoni ini?',
+            text: `Testimoni : ${name}`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = `testimonials/${id}/delete`;
+            } else {
+                Swal.fire('Testimoni tidak dihapus', '', 'info');
+            }
+        });
+    }
+</script>
 <!--**********************************
             Content body end
         ***********************************-->

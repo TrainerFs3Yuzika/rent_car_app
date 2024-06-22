@@ -89,3 +89,5 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     // Route::post('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
     // Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
+
+Route::get('testimonials/{id}/delete', [DashboardController::class, 'destroy'])->name('testimonials.delete');
