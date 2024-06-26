@@ -50,8 +50,8 @@ Route::controller(HomepageController::class)->group(function () {
     Route::get('/checkout', 'checkout')->middleware('auth');
     Route::get('/onProcess', 'onProcess')->middleware('auth');
     Route::get('/history', 'history')->middleware('auth');
-    Route::get('/profile', 'profile')->middleware('auth');
-    Route::Post('/profile', 'update')->middleware('auth');
+    Route::get('/profile', 'profile')->middleware('auth','verified');
+    Route::Post('/profile', 'update')->middleware('auth','verified');
     Route::post('/return', 'pengembalian')->middleware('auth');
     Route::get('/export/{id}', 'export')->middleware('auth');
     Route::get('/exportOrder', 'exportOrder')->middleware('auth');
@@ -65,6 +65,8 @@ Route::resource('/denda', DendaController::class);
 
 //! Routing Auth
 Auth::routes();
+
+Auth::routes(['verify' => true]);
 
 //! Routing Dashboard
 Route::middleware(['auth', 'isAdmin'])->group(function () {
